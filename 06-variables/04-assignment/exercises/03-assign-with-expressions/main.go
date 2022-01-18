@@ -34,7 +34,6 @@ func main() {
 
 	// ADD YOUR CODE BELOW
 
-	// ?
-
+	n = 3.14 * float64(2)
 	fmt.Println(n)
 }
