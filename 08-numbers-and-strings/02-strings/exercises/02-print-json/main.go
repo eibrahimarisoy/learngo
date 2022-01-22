@@ -41,4 +41,15 @@ func main() {
 		"}\n"
 
 	fmt.Println(json)
+
+	json_2 := `
+{
+	"Items": [{
+		"Item": {
+			"name": "Teddy Bear"
+		}
+	}]
+}`
+
+	fmt.Println(json_2)
 }
