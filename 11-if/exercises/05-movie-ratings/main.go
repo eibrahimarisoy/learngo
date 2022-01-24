@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // STORY
 //
@@ -53,4 +59,10 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	if a := os.Args; len(a) != 2 {
+		fmt.Println("Emre")
+	} else if n, err := strconv.Atoi(a[1]); err != nil {
+		fmt.Println("arısoy", n)
+	}
 }

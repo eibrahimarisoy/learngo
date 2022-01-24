@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 // ---------------------------------------------------------
 // CHALLENGE #1
 //  Create a user/password protected program.
@@ -34,4 +39,23 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	username_ := "jack"
+	password_ := "1888"
+
+	args := os.Args
+
+	if len(args) != 3 {
+		fmt.Println("Usage: [username] [password]")
+		return
+	}
+
+	username, password := os.Args[1], os.Args[2]
+
+	if username != username_ {
+		fmt.Printf("Access denied for %q\n", username_)
+	} else if password != password_ {
+		fmt.Printf("Invalid password for %s\n", username_)
+	} else {
+		fmt.Printf("Access granted for %s\n", username_)
+	}
 }

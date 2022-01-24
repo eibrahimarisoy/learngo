@@ -12,7 +12,6 @@ import (
 	"fmt"
 	"os"
 	"strconv"
-	"strings"
 )
 
 // ---------------------------------------------------------
@@ -39,15 +38,20 @@ Usage:
 feet [feetsToConvert]`
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Println(strings.TrimSpace(usage))
+	args := os.Args
+
+	if len(args) != 2 {
+		fmt.Println(usage)
 		return
 	}
 
-	arg := os.Args[1]
+	feet, err := strconv.ParseFloat(args[1], 64)
 
-	feet, _ := strconv.ParseFloat(arg, 64)
+	if err != nil {
+		fmt.Printf("ERROR: %q is not a number", args[1])
+		return
+	}
 	meters := feet * 0.3048
+	fmt.Println(feet, "feet is", meters, "meter.")
 
-	fmt.Printf("%g feet is %g meters.\n", feet, meters)
 }
