@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Declare empty arrays
 //
@@ -35,6 +37,45 @@ package main
 //   For example:
 //     When printing a string array, you can use "%q" verb as usual.
 //
+// ---------------------------------------------------------
+
+func main() {
+	// names := [3]string{}
+	// fmt.Printf("names: %q\n", names)
+
+	// distances := [5]float64{}
+	// fmt.Printf("distances: %q\n", distances)
+
+	// data := [5]byte{}
+	// fmt.Printf("data: %q\n", data)
+
+	// ratios := [1]float64{}
+	// fmt.Printf("ratios: %q\n", ratios)
+
+	// alives := [4]bool{}
+	// fmt.Printf("alives: %q\n", alives)
+
+	// zero := [0]byte{}
+	// fmt.Printf("zero: %q\n", zero)
+
+	var (
+		names     [3]string
+		distances [5]float64
+		data      [5]byte
+		ratios    [1]float64
+		alives    [4]bool
+		zero      [0]byte
+	)
+
+	fmt.Printf("%#v \n", names)
+	fmt.Printf("%#v \n", distances)
+	fmt.Printf("%#v \n", data)
+	fmt.Printf("%#v \n", ratios)
+	fmt.Printf("%#v \n", alives)
+	fmt.Printf("%#v \n", zero)
+
+}
+
 // EXPECTED OUTPUT
 //  names    : [3]string{"", "", ""}
 //  distances: [5]int{0, 0, 0, 0, 0}
@@ -56,7 +97,3 @@ package main
 //  ratios   : [0.00]
 //  alives   : [false false false false]
 //  zero     : []
-// ---------------------------------------------------------
-
-func main() {
-}
