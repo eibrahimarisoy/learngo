@@ -37,6 +37,10 @@ func main() {
 
 	days, month := 28, os.Args[1]
 
+	switch strings.ToLower(month) {
+	case "april", "june", "september", "november":
+	}
+	// ...
 	if m := strings.ToLower(month); m == "april" ||
 		m == "june" ||
 		m == "september" ||
